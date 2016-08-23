@@ -1,0 +1,22 @@
+<nav class='navbar navbar-inverse navbar-fixed-top'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <div class='navbar-brand'>{{#link-to 'index'}}Unicorn Corporation{{/link-to}}</div>
+    </div>
+    <div class='collapse navbar-collapse' id='myNavbar'>
+      <ul class='nav navbar-nav'>
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+        <li>{{#link-to 'employees'}}Employees{{/link-to}}</li>
+        <li>{{#link-to 'metrics'}}Metrics{{/link-to}}</li>
+        <li>{{#link-to 'data'}}Data{{/link-to}}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{{outlet}}
