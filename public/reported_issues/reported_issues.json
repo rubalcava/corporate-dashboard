@@ -1,0 +1,42 @@
+[
+    {
+        "month": "Jan",
+        "year": 2016,
+        "issues": 100
+    },
+    {
+        "month": "Feb",
+        "year": 2016,
+        "issues": 27
+    },
+    {
+        "month": "Mar",
+        "year": 2016,
+        "issues": 32
+    },
+    {
+        "month": "Apr",
+        "year": 2016,
+        "issues": 21
+    },
+    {
+        "month": "May",
+        "year": 2016,
+        "issues": 18
+    },
+    {
+        "month": "Jun",
+        "year": 2016,
+        "issues": 24
+    },
+    {
+        "month": "Jul",
+        "year": 2016,
+        "issues": 20
+    },
+    {
+        "month": "Aug",
+        "year": 2016,
+        "issues": 11
+    }
+]

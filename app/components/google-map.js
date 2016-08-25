@@ -57,8 +57,8 @@ export default Ember.Component.extend({
             infowindow.addListener('closeclick', function() {
                 infowindow.marker = null;
             });
-            infowindow.setContent("<div>" + locationObject.city + "</div>" + '<div>' + locationObject.type + '</div>' +
-                "<div>Employees: " + locationObject.employees + "</div>");
+            infowindow.setContent('<div>' + locationObject.city + '</div>' + '<div>' + locationObject.type + '</div>' +
+                '<div>Employees: ' + locationObject.employees + '</div>');
             if (infowindow.marker.getAnimation() !== null) {
                 infowindow.marker.setAnimation(null);
             } else {

@@ -2,11 +2,23 @@ body {
     padding: 50px 15px 0 15px;
 }
 
+table {
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 12px sans-serif;
+}
+
+td {
+    border: 1px black solid;
+    padding: 5px;
+}
+
 .map-canvas {
     width: 100%;
     height: 400px;
     margin: auto;
 }
+
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
