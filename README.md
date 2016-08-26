@@ -1,7 +1,13 @@
 # Corporate Dashboard
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+If you are solely interested in running this app, you don't need to worry about anything from the Prerequisites section and on. Instead, simply follow these steps:
+
+* Fire up your terminal and navigate to the dist folder
+* Run "python -m SimpleHTTPServer 8080"
+* Run "localhost:8080"
+* Enjoy!
 
 ## Prerequisites
 
