@@ -2,12 +2,12 @@
 
 This README outlines the details of collaborating on this Ember application.
 
-If you are solely interested in running this app, you don't need to worry about anything from the Prerequisites section and on. Instead, simply follow these steps:
+To run this app, you will follow the instruction below, but here is a quick summary:
 
-* Fire up your terminal and navigate to the dist folder
-* Run "python -m SimpleHTTPServer 8080"
-* Run "localhost:8080"
-* Enjoy!
+* Follow Prerequisites, Installation, and Running/Developement instructions.
+* To prepare production ready files, follow the building instruction in Building.
+    * Once you've done this, nagivate to the dist folder in youre terminal and serve the app via "python -m SimpleHTTPServer 8080" and then navigate to "localhost:8080" in your browser.
+    * Enjoy!
 
 ## Prerequisites
 
