@@ -3,6 +3,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    runAll: null,
     initTable: function() {
         function buildTable() {
             var csvFile;
@@ -62,5 +63,17 @@ export default Ember.Component.extend({
             var myList = new List("table-div", options);
         }
         buildTable();
-    }.on('didInsertElement')
+    }.on('didInsertElement'),
+
+    didInsertElement() {
+        this.runAll = Ember.run.later(this, function() {
+            this.initTable();
+
+            this.runAll = Ember.run.later(this, this.runAll, 60000);
+        }, 60000);
+    },
+
+    didDestroyElement() {
+        Ember.run.cancel(this.runAll);
+    }
 });

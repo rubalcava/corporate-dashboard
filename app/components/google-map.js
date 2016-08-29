@@ -6,6 +6,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    runAll: null,
   insertMap: function() {
       function redrawMap(self) {
           var container = self.$('.map-canvas')[0];
@@ -107,5 +108,17 @@ export default Ember.Component.extend({
           /* end map bounds work */
       }
       redrawMap(this);
-    }.on('didInsertElement')
+  }.on('didInsertElement'),
+
+  didInsertElement() {
+      this.runAll = Ember.run.later(this, function() {
+          this.insertMap();
+
+          this.runAll = Ember.run.later(this, this.runAll, 60000);
+      }, 60000);
+  },
+
+  didDestroyElement() {
+      Ember.run.cancel(this.runAll);
+  }
 });
