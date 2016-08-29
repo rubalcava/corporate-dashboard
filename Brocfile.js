@@ -11,7 +11,8 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-app.import('vendor/gmaps.js');
+/* This stopped working, so moving api call to index.html */
+/*app.import('vendor/gmaps.js');*/
 app.import('vendor/gcharts.js');
 app.import('vendor/papaparse.js');
 app.import('vendor/list.js');

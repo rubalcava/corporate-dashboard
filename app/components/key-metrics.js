@@ -5,6 +5,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    runAll: null,
     insertOpenIssues: function() {
         function refreshNumberOfIssues() {
             Ember.$.ajax({
@@ -17,9 +18,8 @@ export default Ember.Component.extend({
                     console.log(err);
                 }
             });
-            /* refresh every 5 seconds */
-            setTimeout(refreshNumberOfIssues,5000);
         }
+
         refreshNumberOfIssues();
     }.on('didInsertElement'),
 
@@ -73,9 +73,8 @@ export default Ember.Component.extend({
                     console.log(err);
                 }
             });
-            /* refresh every 5 seconds */
-            setTimeout(refreshPayingCustomers,5000);
         }
+
         refreshPayingCustomers();
     }.on('didInsertElement'),
 
@@ -128,9 +127,22 @@ export default Ember.Component.extend({
                     console.log(err);
                 }
             });
-            /* refresh every 5 seconds */
-            setTimeout(refreshReportedIssues,5000);
         }
+
         refreshReportedIssues();
-    }.on('didInsertElement')
+    }.on('didInsertElement'),
+
+    didInsertElement() {
+        this.runAll = Ember.run.later(this, function() {
+            this.insertOpenIssues();
+            this.insertPayingCustomers();
+            this.insertReportedIssues();
+
+            this.runAll = Ember.run.later(this, this.runAll, 5000);
+        }, 5000);
+    },
+
+    didDestroyElement() {
+        Ember.run.cancel(this.runAll);
+    }
 });

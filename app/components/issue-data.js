@@ -60,9 +60,6 @@ export default Ember.Component.extend({
             };
 
             var myList = new List("table-div", options);
-
-            /* refresh table every 60 seconds*/
-            setTimeout(buildTable, 60000);
         }
         buildTable();
     }.on('didInsertElement')

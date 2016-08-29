@@ -105,10 +105,6 @@ export default Ember.Component.extend({
           }
           myMap.fitBounds(bounds);
           /* end map bounds work */
-          /* refresh every 30 seconds */
-          setTimeout(function() {
-              redrawMap(self);
-          },30000);
       }
       redrawMap(this);
     }.on('didInsertElement')
