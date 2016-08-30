@@ -4,6 +4,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     runAll: null,
     csvData: null,
+    tableHeader: ['Submit Time', 'Cust Name', 'Cust Email', 'Description', 'Open/Closed', 'Closed Time', 'Employee Assigned'],
     responsiveTable: null,
     initTable: function() {
         var _component = this;
@@ -18,9 +19,14 @@ export default Ember.Component.extend({
                 Papa.parse(csvFile, {
                     complete: function(results) {
                         csvFile = results.data;
-
                         this.csvData = csvFile;
                         _component.set('issues', this.csvData);
+                        _component.set('header', _component.tableHeader);
+                        if (_component.responsiveTable !== null) {
+                            _component.responsiveTable.clear();
+                            _component.responsiveTable.rows.add(csvFile);
+                            _component.responsiveTable.draw();
+                        }
                     }
                 });
             },
@@ -34,19 +40,18 @@ export default Ember.Component.extend({
     didInsertElement() {
         this.runAll = Ember.run.later(this, function() {
             this.initTable();
-            console.log('ran');
-            this.runAll = Ember.run.later(this, this.runAll, 30000);
-        }, 30000);
+            this.runAll = Ember.run.later(this, this.runAll, 10000);
+        }, 10000);
     },
 
-    didRender() {
+    didUpdate() {
+        var self = this;
         Ember.$(document).ready(function() {
-            Ember.$('#data-table').DataTable({
+            self.responsiveTable = Ember.$('#data-table').DataTable({
                 destroy: true,
                 responsive: true
             });
         });
-
     },
 
     didDestroyElement() {
