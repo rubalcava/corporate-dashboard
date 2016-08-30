@@ -49,7 +49,10 @@ export default Ember.Component.extend({
         Ember.$(document).ready(function() {
             self.responsiveTable = Ember.$('#data-table').DataTable({
                 destroy: true,
-                responsive: true
+                responsive: false,
+                scrollX: 200,
+                deferRender: true,
+                scroller: true
             });
         });
     },

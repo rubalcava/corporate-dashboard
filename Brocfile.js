@@ -15,5 +15,6 @@ app.import('vendor/gcharts.js');
 app.import('vendor/papaparse.js');
 app.import('vendor/datatables.js');
 app.import('vendor/datatablesresponsive.js');
+app.import('vendor/datatablesscroller.js');
 
 module.exports = app.toTree();
