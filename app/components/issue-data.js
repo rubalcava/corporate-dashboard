@@ -1,5 +1,4 @@
 /* Code for Papa Parse found at http://papaparse.com/ */
-
 import Ember from 'ember';
 
 export default Ember.Component.extend({
@@ -7,28 +6,28 @@ export default Ember.Component.extend({
     csvData: null,
     responsiveTable: null,
     initTable: function() {
-            var _component = this;
-            var csvFile;
-            Ember.$.ajax({
-                url: 'open_issues_data/open_issues_data.csv',
-                dataType: 'text',
-                async: false,
-                success: function(response) {
-                    csvFile = response;
+        var _component = this;
+        var csvFile;
+        Ember.$.ajax({
+            url: 'open_issues_data/open_issues_data.csv',
+            dataType: 'text',
+            async: false,
+            success: function(response) {
+                csvFile = response;
 
-                    Papa.parse(csvFile, {
-                        complete: function(results) {
-                            csvFile = results.data;
+                Papa.parse(csvFile, {
+                    complete: function(results) {
+                        csvFile = results.data;
 
-                            this.csvData = csvFile;
-                            _component.set('issues', this.csvData);
-                        }
-                    });
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
+                        this.csvData = csvFile;
+                        _component.set('issues', this.csvData);
+                    }
+                });
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
 
     }.on('didInsertElement'),
 
@@ -43,7 +42,7 @@ export default Ember.Component.extend({
     didRender() {
         Ember.$(document).ready(function() {
             Ember.$('#data-table').DataTable({
-                destroy:true,
+                destroy: true,
                 responsive: true
             });
         });
