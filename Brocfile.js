@@ -4,17 +4,16 @@
 
     Papa Parser CSV parser found at http://papaparse.com/
 
-    Listjs found at http://www.listjs.com/examples/table
+    DataTables found at https://www.datatables.net/
 */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-/* This stopped working, so moving api call to index.html */
-/*app.import('vendor/gmaps.js');*/
 app.import('vendor/gcharts.js');
 app.import('vendor/papaparse.js');
-app.import('vendor/list.js');
+app.import('vendor/datatables.js');
+app.import('vendor/datatablesresponsive.js');
 
 module.exports = app.toTree();

@@ -29,20 +29,19 @@ export default Ember.Component.extend({
                 }
             });
 
-            /* TODO uncomment when table figured out
-            var options = {
-                valueNames: ["issue_number", "customer_id", "date_reported", "location"]
-            };
-
-            var myList = new List("table-div", options);
-            */
     }.on('didInsertElement'),
 
     didInsertElement() {
         this.runAll = Ember.run.later(this, function() {
             this.initTable();
-            this.runAll = Ember.run.later(this, this.runAll, 5000);
-        }, 5000);
+            this.runAll = Ember.run.later(this, this.runAll, 30000);
+        }, 30000);
+    },
+
+    didRender() {
+        Ember.$(document).ready(function() {
+            Ember.$('#data-table').DataTable();
+        });
     },
 
     didDestroyElement() {
