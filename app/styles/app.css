@@ -8,7 +8,6 @@ body {
     margin: auto;
 }
 
-
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 /* Small devices (tablets, 768px and up) */
@@ -16,11 +15,12 @@ body {
   body {
     width: 768px;
     margin: auto;
-    }
-    .map-canvas {
+  }
+
+  .map-canvas {
         width: 100%;
         height: 600px;
-    }
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -29,6 +29,7 @@ body {
         width: 992px;
         margin: auto;
     }
+
     .map-canvas {
         width: 100%;
     }
@@ -40,6 +41,7 @@ body {
         width: 1200px;
         margin: auto;
     }
+
     .map-canvas {
         width: 100%;
     }

@@ -5,6 +5,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     runAll: null,
     csvData: null,
+    responsiveTable: null,
     initTable: function() {
             var _component = this;
             var csvFile;
@@ -34,14 +35,19 @@ export default Ember.Component.extend({
     didInsertElement() {
         this.runAll = Ember.run.later(this, function() {
             this.initTable();
+            console.log('ran');
             this.runAll = Ember.run.later(this, this.runAll, 30000);
         }, 30000);
     },
 
     didRender() {
         Ember.$(document).ready(function() {
-            Ember.$('#data-table').DataTable();
+            Ember.$('#data-table').DataTable({
+                destroy:true,
+                responsive: true
+            });
         });
+
     },
 
     didDestroyElement() {
