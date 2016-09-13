@@ -1,0 +1,32 @@
+[
+    {
+        "city": "Athens, GA",
+        "type": "Regional office",
+        "coordinates":
+        {
+            "lat": 33.9519,
+            "lng": -83.3576
+        },
+        "employees": 24
+    },
+    {
+        "city": "Austin, TX",
+        "type": "Regional office",
+        "coordinates":
+        {
+            "lat": 30.2672,
+            "lng": -97.7431
+        },
+        "employees": 63
+    },
+    {
+        "city": "San Francisco, CA",
+        "type": "Corporate Headquarters",
+        "coordinates":
+        {
+            "lat": 37.7749,
+            "lng": -122.4194
+        },
+        "employees": 232
+    }
+]

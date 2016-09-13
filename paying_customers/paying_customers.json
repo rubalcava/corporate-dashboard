@@ -1,0 +1,42 @@
+[
+    {
+        "month": "Jan",
+        "year": 2016,
+        "customers": 10000
+    },
+    {
+        "month": "Feb",
+        "year": 2016,
+        "customers": 12000
+    },
+    {
+        "month": "Mar",
+        "year": 2016,
+        "customers": 14400
+    },
+    {
+        "month": "Apr",
+        "year": 2016,
+        "customers": 17280
+    },
+    {
+        "month": "May",
+        "year": 2016,
+        "customers": 20736
+    },
+    {
+        "month": "Jun",
+        "year": 2016,
+        "customers": 24883
+    },
+    {
+        "month": "Jul",
+        "year": 2016,
+        "customers": 29860
+    },
+    {
+        "month": "Aug",
+        "year": 2016,
+        "customers": 35832
+    }
+]
