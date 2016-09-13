@@ -1,5 +1,8 @@
 # Corporate Dashboard
 
+You can view this app live:
+https://rubalcava.github.io/corporate-dashboard/
+
 This README outlines the details of collaborating on this Ember application.
 
 To run this app, you will follow the instruction below, but here is a quick summary:
@@ -8,6 +11,10 @@ To run this app, you will follow the instruction below, but here is a quick summ
 * To prepare production ready files (minified by Ember.js), follow the build instructions in "Building" for production.
     * Once you've done this, nagivate to the dist folder in your terminal and serve the app via "python -m SimpleHTTPServer 8080" and then navigate to "localhost:8080" in your browser.
     * Enjoy!
+
+## Current Issues
+
+* Currently, the routes reload periodically without regard to whether or not the underlying data sources have actually changed. Need to implement background polling that will only update the page if data has changed.
 
 ## Prerequisites
 
